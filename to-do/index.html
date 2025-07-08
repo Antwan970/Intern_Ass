@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile Card + To-Do List</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Profile Card -->
+  <section class="profile-card">
+    <img src="Deadpool.jpg" alt="Deadpool Profile Picture" class="profile-pic">
+    <h2>Antwan Michael</h2>
+    <p class="bio hidden">
+      Frontend Development Intern<br>
+      Skills: HTML, CSS, JavaScript, React<br>
+      Projects: Smart Parking System, Simple Calculator
+    </p>
+    <button id="toggleBtn">Show More</button>
+  </section>
+
+  <!-- To-Do List -->
+  <section class="todo-section">
+    <h2>My To-Do List</h2>
+    <div class="input-group">
+      <input id="input" type="text" placeholder="Add a task" />
+      <input id="indexInput" type="number" placeholder="Index (optional)" />
+      <button onclick="addTodo()">Add</button>
+    </div>
+    <ul id="todos"></ul>
+  </section>
+
+  <script src="dist/script.js"></script>
+</body>
+</html>
