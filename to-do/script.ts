@@ -79,3 +79,50 @@ function addTodo(): void {
 
 // Expose to HTML
 (window as any).addTodo = addTodo;
+
+
+//const is used instead of enum
+const Direction = {
+  Up: true,
+  Down: false,
+  Left: { angle: 180 },
+  Right: "move-right"
+} as const;
+
+
+// Status enum
+enum Status {
+  Success = "success",
+  Error = "error",
+  Loading = "loading"
+}
+
+
+interface ApiResponse<T> {
+  data: T;
+  status: Status;
+  errorMessage?: string;
+}
+
+
+interface User {
+  name: string;
+  email: string;
+  age: number;
+}
+
+
+const successResponse: ApiResponse<User> = {
+  data: {
+    name: "Antwan",
+    email: "antwan@gmail.com",
+    age: 20
+  },
+  status: Status.Success
+};
+
+console.log("Name:", successResponse.data.name);
+console.log("Email:", successResponse.data.email);
+console.log("Age:", successResponse.data.age);
+console.log("Status:", successResponse.status);
+
